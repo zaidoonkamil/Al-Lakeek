@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, HeadphonesIcon } from "lucide-react";
 import Container from "./Container";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
@@ -62,8 +62,8 @@ export default function Footer() {
               <span>{SITE.location.full}</span>
             </li>
             <li className="group flex items-center gap-3 text-sm text-neutral-400">
-              <Phone size={18} className="shrink-0 text-brand-green transition-transform group-hover:scale-110" />
-              <span dir="ltr">{SITE.phone}</span>
+              <HeadphonesIcon size={18} className="shrink-0 text-brand-green transition-transform group-hover:scale-110" />
+              <span>التواصل من داخل التطبيق - الدعم الفني</span>
             </li>
             <li className="group flex items-center gap-3 text-sm text-neutral-400">
               <Mail size={18} className="shrink-0 text-brand-green transition-transform group-hover:scale-110" />
@@ -76,7 +76,7 @@ export default function Footer() {
       <div className="relative border-t border-white/10 py-6">
         <Container className="flex flex-col items-center justify-between gap-3 text-xs text-neutral-500 sm:flex-row">
           <p>© {new Date().getFullYear()} {SITE.name}. جميع الحقوق محفوظة.</p>
-          <p>شركة مسجلة رسمياً في السجل التجاري العراقي</p>
+          <p>شركة مسجلة رسمياً في دائرة تسجيل الشركات </p>
         </Container>
       </div>
     </footer>

@@ -28,8 +28,8 @@ export default function AppCTA() {
                 حمّل تطبيق {SITE.name} وابدأ استثمارك اليوم
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-base leading-8 text-neutral-300 lg:mx-0">
-                إدارة كاملة لاستثماراتك، انضمام لمجتمع المستثمرين، ومتابعة غرف
-                التداول، كل ذلك من هاتفك في أي وقت ومكان.
+                إدارة كاملة  من قبل شركة اللكيك، انضمام لمجتمع اللكيك، ومتابعة غرف
+                باقاتك، كل ذلك من هاتفك في أي وقت ومكان.
               </p>
               <a
                 href={SITE.playStoreUrl}

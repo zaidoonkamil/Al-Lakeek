@@ -12,7 +12,7 @@ export default function Packages() {
         <SectionHeading
           eyebrow="باقات الأسهم"
           title="اختر باقة الأسهم المناسبة لك"
-          description="كل باقة أسهم تمنحك رصيد نقاط يومي ثابت، تقدر تستخدمه داخل التطبيق وفق سياسات وشروط الاستخدام."
+          description="كل باقة أسهم تمنحك رصيد نقاط يومي ثابت، تستطيع ان تستخدمه داخل التطبيق وفق سياسات وشروط الاستخدام."
         />
 
         <div className="reveal-stagger mt-16 grid gap-8 lg:grid-cols-3">
@@ -105,7 +105,7 @@ export default function Packages() {
                     <Coins size={15} className={pkg.highlight ? "text-white" : "text-brand-green"} />
                   </span>
                   <span className={pkg.highlight ? "text-white/90" : "text-neutral-700"}>
-                    استخدم نقاطك داخل التطبيق حسب سياسة الاستخدام
+                    يمكن للمستخدم استخدام النقاط داخل التطبيق وفق سياسات التطبيق وشروطه
                   </span>
                 </li>
               </ul>

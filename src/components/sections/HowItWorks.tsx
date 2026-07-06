@@ -9,7 +9,7 @@ export default function HowItWorks() {
       <Container className="relative">
         <SectionHeading
           eyebrow="كيف تبدأ"
-          title="ابدأ استثمارك في 4 خطوات بسيطة"
+          title="ابدأ رحلتك معنا  في اربع خطوات بسيطة"
           description="رحلتك الاستثمارية مع اللكيك تبدأ بخطوات واضحة وسهلة، من التحميل حتى متابعة الأرباح."
         />
 

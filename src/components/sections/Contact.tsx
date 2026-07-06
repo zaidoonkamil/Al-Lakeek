@@ -1,4 +1,4 @@
-import { Mail, MapPin, Navigation, Phone } from "lucide-react";
+import { HeadphonesIcon, Mail, MapPin, Navigation } from "lucide-react";
 import Container from "../layout/Container";
 import SectionHeading from "../ui/SectionHeading";
 import { SITE } from "@/lib/constants";
@@ -10,10 +10,9 @@ const INFO = [
     value: SITE.location.full,
   },
   {
-    icon: Phone,
-    title: "الهاتف",
-    value: SITE.phone,
-    dir: "ltr" as const,
+    icon: HeadphonesIcon,
+    title: "الدعم الفني",
+    value: "التواصل من داخل التطبيق - الدعم الفني",
   },
   {
     icon: Mail,

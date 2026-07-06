@@ -35,7 +35,8 @@ export default function Features() {
         <SectionHeading
           eyebrow="مزايا المنصة"
           title="كل ما تحتاجه لاستثمار ناجح"
-          description="مجتمع تفاعلي، غرف تداول مباشرة، وباقات مرنة، كلها ضمن تطبيق واحد سهل الاستخدام."
+          description="يقدم خدمات التواصل، مجتمع تفاعلي،   النقاط، الباقات، والمتاجر الإلكترونية.
+توفر المتاجر الإلكترونية داخل التطبيق شراء النقاط والباقات والخدمات عبر القنوات الرسمية فقط."
         />
 
         <div className="reveal-stagger mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

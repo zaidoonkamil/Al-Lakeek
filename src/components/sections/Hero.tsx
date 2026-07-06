@@ -84,7 +84,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-green opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-green" />
             </span>
-            شركة مسجلة رسمياً في السجل التجاري العراقي
+            شركة مسجلة رسمياً في دائرة تسجيل الشركات 
           </div>
 
           <h1 className="mt-7 text-[2.6rem] font-extrabold leading-[1.15] tracking-tight text-brand-navy sm:text-6xl lg:text-[3.4rem]">

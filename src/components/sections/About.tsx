@@ -1,4 +1,4 @@
-import { Building2, FileCheck2, MapPin, Wallet } from "lucide-react";
+import { Building2, FileCheck2, Gavel, MapPin, Users, Wallet } from "lucide-react";
 import Container from "../layout/Container";
 import SectionHeading from "../ui/SectionHeading";
 import { SITE } from "@/lib/constants";
@@ -7,13 +7,13 @@ const CARDS = [
   {
     icon: Building2,
     title: "شركة عراقية موثوقة",
-    text: "اللكيك للاستثمار شركة عراقية مسجلة رسمياً، تعمل وفق الأنظمة والقوانين المحلية بكل شفافية.",
+    text: "اللكيك للاستثمار شركة عراقية مسجلة رسمياً، تعمل وفق الأنظمة والقوانين المحلية بكل شفافية. كما تعمل الشركة على تنظيم خدماتها التجارية والتسويقية بما ينسجم مع طبيعة نشاطها والقوانين النافذة",
     big: true,
   },
   {
     icon: FileCheck2,
-    title: "مسجلة بالتجارة العراقية",
-    text: "مسجلة رسمياً في السجل التجاري العراقي، وتخضع لمتطلبات الترخيص والمتابعة القانونية.",
+    title: "مسجلة في دائرة تسجيل الشركات",
+    text: "مسجلة رسمياً في دائرة تسجل الشركات، وتخضع لمتطلبات الترخيص والمتابعة القانونية.",
   },
   {
     icon: Wallet,
@@ -23,7 +23,17 @@ const CARDS = [
   {
     icon: MapPin,
     title: "مقرها بابل - المسيب",
-    text: "ننطلق من قضاء المسيب لنصل بخدماتنا الاستثمارية لكل العراق.",
+    text: "ننطلق من قضاء المسيب لنصل بخدماتنا  لكل العراق والدول العربيه",
+  },
+  {
+    icon: Users,
+    title: "الموزعون",
+    text: "يعتمد تطبيق اللكيك على موزعين معتمدين لتقديم خدمات النقاط والباقات للمستخدمين عبر القنوات الرسمية، بما يضمن تجربة آمنة وموثوقة.",
+  },
+  {
+    icon: Gavel,
+    title: "صلاحيات الشركة",
+    text: "تمارس شركة اللكيك أعمالها وصلاحياتها وفق القوانين النافذة، بما يشمل إبرام العقود، وإدارة الأنشطة التجارية والتسويقية، والتعامل مع الجهات الرسمية والمصارف، وتملك الأموال اللازمة لتحقيق أهدافها.",
   },
 ];
 
@@ -41,8 +51,8 @@ export default function About() {
       <Container className="relative">
         <SectionHeading
           eyebrow="من نحن"
-          title="شركة اللكيك للاستثمار"
-          description="نؤمن بأن الاستثمار الناجح يبدأ من الثقة والشفافية. لذلك أسسنا شركة اللكيك للاستثمار لنقدم لعملائنا في العراق فرصة استثمار حقيقية، مدعومة بتطبيق ذكي ومجتمع استثماري متكامل."
+          title="نشاط الشركة في التسويق الإلكتروني"
+          description="تعمل الشركة في مجال التسويق الإلكتروني من خلال استثمار رؤوس الأموال في الأنشطة التسويقية، وتسويق المنتجات والسلع والبضائع عبر شبكة الإنترنت، وتقديم خدمات تساعد على تسهيل التواصل المستمر مع المستهلكين والعملاء."
         />
 
         <div className="mt-16 grid gap-6">
@@ -61,7 +71,7 @@ export default function About() {
             </div>
           ))}
 
-          <div className="reveal-stagger grid gap-6 sm:grid-cols-3">
+          <div className="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {CARDS.filter((c) => !c.big).map((card) => (
               <div
                 key={card.title}
@@ -101,7 +111,7 @@ export default function About() {
                 مسجلة رسمياً
               </p>
               <p className="mt-2 text-sm font-medium text-white/85">
-                في السجل التجاري العراقي
+                في دائرة تسجل الشركات
               </p>
             </div>
           </div>
