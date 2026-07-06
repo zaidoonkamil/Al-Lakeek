@@ -101,7 +101,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="تواصل معنا"
           title="نحن هنا لمساعدتك"
-          description="لأي استفسار عن الشركة أو الباقات الاستثمارية، فريقنا في المسيب - بابل جاهز للرد عليك."
+          description="لأي استفسار عن الشركة أو الباقات  فريقنا جاهز للرد عليك."
         />
 
         <div className="reveal-stagger mt-16 grid gap-8 lg:grid-cols-5">

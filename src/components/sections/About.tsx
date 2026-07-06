@@ -3,11 +3,22 @@ import Container from "../layout/Container";
 import SectionHeading from "../ui/SectionHeading";
 import { SITE } from "@/lib/constants";
 
+const COMPANY_PURPOSES = [
+  {
+    label: "في مجال التجارة العامة",
+    text: "تشمل استيراد وتصدير وبيع وشراء كافة السلع والبضائع المسموح بها قانوناً وفقاً لقانون التجارة رقم (30) لسنة 1984 والتعليمات الصادرة بموجبه والتي تنسجم مع طبيعة نشاط الشركة.",
+  },
+  {
+    label: "في مجال التسويق الإلكتروني",
+    text: "المساهمة في استثمار رؤوس الأموال في مجال التسويق الإلكتروني، وذلك من خلال إدارة الشركة لعملية تسويق السلع والبضائع عبر شبكة الإنترنت وخدمات الزبائن الإلكترونية، بما يسهّل على المستهلك التواصل المستمر.",
+  },
+];
+
 const CARDS = [
   {
     icon: Building2,
     title: "شركة عراقية موثوقة",
-    text: "اللكيك للاستثمار شركة عراقية مسجلة رسمياً، تعمل وفق الأنظمة والقوانين المحلية بكل شفافية. كما تعمل الشركة على تنظيم خدماتها التجارية والتسويقية بما ينسجم مع طبيعة نشاطها والقوانين النافذة",
+    text: "اللكيك شركة عراقية مسجلة رسمياً، تعمل وفق الأنظمة والقوانين المحلية بكل شفافية. كما تعمل الشركة على تنظيم خدماتها التجارية والتسويقية بما ينسجم مع طبيعة نشاطها والقوانين النافذة",
     big: true,
   },
   {
@@ -23,7 +34,7 @@ const CARDS = [
   {
     icon: MapPin,
     title: "مقرها بابل - المسيب",
-    text: "ننطلق من قضاء المسيب لنصل بخدماتنا  لكل العراق والدول العربيه",
+    text: "ننطلق من قضاء المسيب لنصل بخدماتنا  لكل العراق والعالم",
   },
   {
     icon: Users,
@@ -52,10 +63,27 @@ export default function About() {
         <SectionHeading
           eyebrow="من نحن"
           title="نشاط الشركة في التسويق الإلكتروني"
-          description="تعمل الشركة في مجال التسويق الإلكتروني من خلال استثمار رؤوس الأموال في الأنشطة التسويقية، وتسويق المنتجات والسلع والبضائع عبر شبكة الإنترنت، وتقديم خدمات تساعد على تسهيل التواصل المستمر مع المستهلكين والعملاء."
+          description="شركة اللكيك للتجارة العامة والتسويق الإلكتروني محدودة المسؤولية، شركة عراقية مسجلة رسمياً تعمل بشفافية كاملة ضمن أغراضها القانونية المحددة."
         />
 
-        <div className="mt-16 grid gap-6">
+        <div className="reveal mt-10 rounded-2xl border border-border-soft bg-[#fbfaf8] p-8">
+          <h3 className="text-xl font-bold text-brand-navy">أغراض الشركة وطبيعة العمل</h3>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {COMPANY_PURPOSES.map((purpose, index) => (
+              <div key={purpose.label} className="flex gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full brand-gradient text-sm font-bold text-white">
+                  {index + 1}
+                </span>
+                <div>
+                  <h4 className="font-bold text-brand-navy">{purpose.label}</h4>
+                  <p className="mt-1 text-sm leading-7 text-neutral-600">{purpose.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6">
           {CARDS.filter((c) => c.big).map((card) => (
             <div
               key={card.title}
@@ -89,13 +117,21 @@ export default function About() {
 
         <div className="reveal mt-8 overflow-hidden rounded-3xl brand-gradient-animated relative">
           <div className="dot-grid-light pointer-events-none absolute inset-0 opacity-30" />
-          <div className="relative grid gap-8 p-10 sm:grid-cols-3 sm:p-14">
+          <div className="relative grid gap-8 p-10 sm:grid-cols-4 sm:p-14">
             <div className="text-center text-white sm:text-right">
               <p className="text-3xl font-extrabold sm:text-4xl">
                 {SITE.capitalLabel}
               </p>
               <p className="mt-2 text-sm font-medium text-white/85">
                 رأس مال الشركة
+              </p>
+            </div>
+            <div className="text-center text-white sm:text-right">
+              <p className="text-3xl font-extrabold sm:text-4xl">
+                {SITE.sharesLabel}
+              </p>
+              <p className="mt-2 text-sm font-medium text-white/85">
+                نسبتها إلى رأس المال
               </p>
             </div>
             <div className="text-center text-white sm:text-right">

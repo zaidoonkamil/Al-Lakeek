@@ -215,11 +215,19 @@ export default function Hero() {
               ))}
             </div>
 
-            <div className="relative mt-8 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
-              <p className="text-sm font-semibold text-white/70">رأس مال الشركة</p>
-              <p className="mt-1 text-2xl font-extrabold brand-gradient-text">
-                {SITE.capitalLabel}
-              </p>
+            <div className="relative mt-8 grid grid-cols-2 gap-3">
+              <div className="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+                <p className="text-sm font-semibold text-white/70">رأس مال الشركة</p>
+                <p className="mt-1 text-2xl font-extrabold brand-gradient-text">
+                  {SITE.capitalLabel}
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+                <p className="text-sm font-semibold text-white/70">نسبتها إلى رأس المال</p>
+                <p className="mt-1 text-2xl font-extrabold brand-gradient-text">
+                  {SITE.sharesLabel}
+                </p>
+              </div>
             </div>
           </div>
         </div>
