@@ -1,64 +1,88 @@
-import Image from "next/image";
-import { Play, Star } from "lucide-react";
+"use client";
+
+import { motion, useScroll, useSpring, useTransform, type MotionValue } from "motion/react";
+import { useRef } from "react";
+import { Chevron } from "../brand/Mark";
+import { Phone, SCREENS } from "../features/Screens";
 import Container from "../layout/Container";
+import Magnetic from "../motion/Magnetic";
 import { SITE } from "@/lib/constants";
 
-export default function AppCTA() {
+function Sweep({ progress, range, color }: { progress: MotionValue<number>; range: [number, number]; color: string }) {
+  // Edge of the chevron, from just off the right side to past the left one.
+  const edge = useTransform(progress, range, [125, -30]);
+  const clipPath = useTransform(
+    edge,
+    (e) => `polygon(${e}% 50%, ${e + 26}% 0%, 130% 0%, 130% 100%, ${e + 26}% 100%)`
+  );
   return (
-    <section className="section-pad bg-white">
-      <Container>
-        <div className="reveal relative overflow-hidden rounded-[2.5rem] bg-brand-navy px-8 py-16 sm:px-16">
-          <div className="dot-grid-light noise-fade pointer-events-none absolute inset-0 opacity-30" />
-          <div
-            aria-hidden
-            className="animate-blob pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-purple/25 blur-3xl"
-          />
-          <div
-            aria-hidden
-            className="animate-blob-delay pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-green/25 blur-3xl"
-          />
+    <motion.div
+      aria-hidden
+      className="absolute inset-0 motion-reduce:hidden"
+      style={{ clipPath, backgroundColor: color }}
+    />
+  );
+}
 
-          <div className="relative grid items-center gap-10 lg:grid-cols-2">
-            <div className="text-center lg:text-right">
-              <div className="mx-auto flex w-fit items-center gap-1 rounded-full bg-white/10 px-4 py-2 text-xs font-bold text-white lg:mx-0">
-                <Star size={14} className="animate-icon-pop fill-brand-green text-brand-green" />
-                متوفر الآن على Google Play
-              </div>
-              <h2 className="mt-6 text-3xl font-extrabold text-white sm:text-4xl">
-                حمّل تطبيق {SITE.name} وابدأ استثمارك اليوم
-              </h2>
-              <p className="mx-auto mt-4 max-w-lg text-base leading-8 text-neutral-300 lg:mx-0">
-                إدارة كاملة  من قبل شركة اللكيك، انضمام لمجتمع اللكيك، ومتابعة غرف
-                باقاتك، كل ذلك من هاتفك في أي وقت ومكان.
-              </p>
+/**
+ * Screen-sized chevrons drive forward across the section, one colour after
+ * another. Navy text reads on all three, so it never depends on the sweep.
+ */
+export default function AppCTA() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const p = useSpring(scrollYProgress, { stiffness: 100, damping: 26 });
+  const phoneY = useTransform(p, [0, 1], [130, -130]);
+  const phoneRotate = useTransform(p, [0, 1], [-12, 5]);
+  const Screen = SCREENS[3];
+
+  return (
+    <section ref={ref} className="relative overflow-hidden bg-yellow py-24 text-ink sm:py-32 lg:py-0">
+      <Sweep progress={p} range={[0.1, 0.42]} color="var(--coral)" />
+      <Sweep progress={p} range={[0.24, 0.56]} color="var(--teal)" />
+      <Container className="relative grid items-center gap-14 lg:min-h-[46rem] lg:grid-cols-[1.25fr_1fr]">
+        <div>
+          <h2 className="font-display text-4xl font-extrabold leading-[1.4] text-balance sm:text-6xl sm:leading-[1.35]">
+            حمّل تطبيق {SITE.name} وابدأ استثمارك اليوم
+          </h2>
+          <p className="mt-6 max-w-xl text-lg font-medium leading-9">
+            إدارة كاملة من قبل شركة اللكيك، انضمام لمجتمع اللكيك، ومتابعة باقاتك، كل ذلك من هاتفك في أي وقت ومكان.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-8">
+            <Magnetic>
               <a
                 href={SITE.playStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-shine mt-8 inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-bold text-brand-navy shadow-xl transition-transform hover:-translate-y-0.5 hover:scale-105"
+                className="btn btn-dark px-8 py-4 text-lg"
               >
-                <Play size={20} className="fill-brand-navy" />
-                <span>
-                  حمّل التطبيق من
-                  <br className="hidden sm:block" /> Google Play
-                </span>
+                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
+                  <path d="M4 2.6v18.8L13.4 12z" fill="#00a0ff" />
+                  <path d="M16.7 8.7 5.6 2.3 13.4 12z" fill="#00d95f" />
+                  <path d="M16.7 15.3 13.4 12 5.6 21.7z" fill="#ff3a44" />
+                  <path d="m20.6 10.9-3.9-2.2L13.4 12l3.3 3.3 3.9-2.2c1.2-.7 1.2-1.5 0-2.2z" fill="#ffd400" />
+                </svg>
+                حمّل التطبيق من Google Play
               </a>
-            </div>
-
-            <div className="animate-float relative mx-auto flex h-56 w-56 items-center justify-center rounded-[2rem] bg-white/5 ring-1 ring-white/10 backdrop-blur">
-              <div className="absolute inset-0 rounded-[2rem] brand-gradient opacity-20 blur-2xl" />
-              <div className="relative h-32 w-32">
-                <Image
-                  src="/images/logo.png"
-                  alt={SITE.name}
-                  fill
-                  sizes="128px"
-                  className="object-contain"
-                />
-              </div>
-            </div>
+            </Magnetic>
+            <span className="nudge flex gap-1.5" aria-hidden>
+              <Chevron className="h-5 w-5" />
+              <Chevron className="h-5 w-5" />
+              <Chevron className="h-5 w-5" />
+            </span>
           </div>
         </div>
+
+        <motion.div
+          className="hidden justify-center motion-reduce:!transform-none lg:flex"
+          style={{ y: phoneY, rotate: phoneRotate }}
+        >
+          <Phone>
+            <div className="screen absolute inset-0" data-on="true">
+              <Screen />
+            </div>
+          </Phone>
+        </motion.div>
       </Container>
     </section>
   );
