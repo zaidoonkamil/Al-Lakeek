@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { Chevron } from "../brand/Mark";
 import { Phone, SCREENS } from "../features/Screens";
 import Container from "../layout/Container";
-import Magnetic from "../motion/Magnetic";
+import StoreButtons from "../ui/StoreButtons";
 import { SITE } from "@/lib/constants";
 
 function Sweep({ progress, range, color }: { progress: MotionValue<number>; range: [number, number]; color: string }) {
@@ -37,7 +37,7 @@ export default function AppCTA() {
   const Screen = SCREENS[3];
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-yellow py-24 text-ink sm:py-32 lg:py-0">
+    <section ref={ref} id="download" className="relative overflow-hidden bg-yellow py-24 text-ink sm:py-32 lg:py-0">
       <Sweep progress={p} range={[0.1, 0.42]} color="var(--coral)" />
       <Sweep progress={p} range={[0.24, 0.56]} color="var(--teal)" />
       <Container className="relative grid items-center gap-14 lg:min-h-[46rem] lg:grid-cols-[1.25fr_1fr]">
@@ -49,22 +49,7 @@ export default function AppCTA() {
             إدارة كاملة من قبل شركة اللكيك، انضمام لمجتمع اللكيك، ومتابعة باقاتك، كل ذلك من هاتفك في أي وقت ومكان.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-8">
-            <Magnetic>
-              <a
-                href={SITE.playStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-dark px-8 py-4 text-lg"
-              >
-                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden>
-                  <path d="M4 2.6v18.8L13.4 12z" fill="#00a0ff" />
-                  <path d="M16.7 8.7 5.6 2.3 13.4 12z" fill="#00d95f" />
-                  <path d="M16.7 15.3 13.4 12 5.6 21.7z" fill="#ff3a44" />
-                  <path d="m20.6 10.9-3.9-2.2L13.4 12l3.3 3.3 3.9-2.2c1.2-.7 1.2-1.5 0-2.2z" fill="#ffd400" />
-                </svg>
-                حمّل التطبيق من Google Play
-              </a>
-            </Magnetic>
+            <StoreButtons tone="dark" />
             <span className="nudge flex gap-1.5" aria-hidden>
               <Chevron className="h-5 w-5" />
               <Chevron className="h-5 w-5" />

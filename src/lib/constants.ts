@@ -16,6 +16,7 @@ export const SITE = {
   },
   playStoreUrl:
     "https://play.google.com/store/apps/details?id=com.napol.fils",
+  appStoreUrl: "https://apps.apple.com/app/id6827071476",
   mapsUrl: "https://maps.google.com/maps?q=Al-Musayyib%2C+Babil%2C+Iraq",
   email: "info@allakeek.com.iq",
 };
@@ -102,7 +103,7 @@ export const FEATURES = [
   {
     title: "تطبيق ذكي وسهل",
     description:
-      "إدارة بالكامل من هاتفك عبر تطبيق بسيط وآمن، متوفر على متجر Google Play في أي وقت ومكان.",
+      "إدارة بالكامل من هاتفك عبر تطبيق بسيط وآمن، متوفر على Google Play و App Store في أي وقت ومكان.",
   },
   {
     title: "أمان وشفافية",
@@ -120,7 +121,6 @@ export const PACKAGES = [
   {
     key: "silver",
     name: "الباقة الفضية",
-    price: "430,000",
     dailyPoints: "1,000",
     duration: "مفتوحة",
     highlight: false,
@@ -128,7 +128,6 @@ export const PACKAGES = [
   {
     key: "gold",
     name: "الباقة الذهبية",
-    price: "620,000",
     dailyPoints: "1,500",
     duration: "مفتوحة",
     highlight: true,
@@ -136,7 +135,6 @@ export const PACKAGES = [
   {
     key: "legend",
     name: "الباقة الأسطورية",
-    price: "1,000,000",
     dailyPoints: "2,500",
     duration: "مفتوحة",
     highlight: false,
@@ -149,7 +147,7 @@ export const PACKAGES_NOTE =
 export const STEPS = [
   {
     title: "حمّل التطبيق",
-    description: "قم بتحميل تطبيق اللكيك للاستثمار من متجر Google Play وأنشئ حسابك في دقائق.",
+    description: "قم بتحميل تطبيق اللكيك للاستثمار من Google Play أو App Store وأنشئ حسابك في دقائق.",
   },
   {
     title: "اختر باقتك",

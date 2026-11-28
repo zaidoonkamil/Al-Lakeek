@@ -6,6 +6,7 @@ import Container from "../layout/Container";
 import Balls from "../motion/Balls";
 import Magnetic from "../motion/Magnetic";
 import SplitWords from "../motion/SplitWords";
+import StoreButtons from "../ui/StoreButtons";
 import { SITE, TRUST_STATS } from "@/lib/constants";
 
 const delay = (s: number) => ({ "--delay": `${s}s` }) as CSSProperties;
@@ -70,21 +71,12 @@ export default function Hero() {
             {SITE.description}
           </p>
 
-          <div className="rise mt-8 flex flex-wrap gap-4" style={delay(0.8)}>
-            <Magnetic>
-              <a
-                href={SITE.playStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-main"
-              >
-                حمّل التطبيق الآن
-                <Chevron className="go" />
-              </a>
-            </Magnetic>
+          <div className="rise mt-8 flex flex-wrap items-center gap-3" style={delay(0.8)}>
+            <StoreButtons />
             <Magnetic>
               <a href="#packages" className="btn btn-ghost">
                 تصفح الباقات
+                <Chevron className="go" />
               </a>
             </Magnetic>
           </div>

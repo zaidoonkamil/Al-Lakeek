@@ -87,9 +87,7 @@ export default function Header() {
           </nav>
 
           <a
-            href={SITE.playStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#download"
             className={`btn hidden px-6 py-2.5 text-[15px] lg:inline-flex ${solid ? "btn-violet" : "btn-main"}`}
           >
             حمّل التطبيق
@@ -143,12 +141,7 @@ export default function Header() {
                 </motion.a>
               ))}
             </nav>
-            <a
-              href={SITE.playStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-main mt-10"
-            >
+            <a href="#download" onClick={() => setOpen(false)} className="btn btn-main mt-10">
               حمّل التطبيق
               <Chevron className="go" />
             </a>

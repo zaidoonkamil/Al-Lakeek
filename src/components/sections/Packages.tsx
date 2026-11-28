@@ -7,7 +7,7 @@ import { Chevron, Mark } from "../brand/Mark";
 import Container from "../layout/Container";
 import Balls from "../motion/Balls";
 import SectionHeading from "../ui/SectionHeading";
-import { PACKAGES, PACKAGES_NOTE, SITE } from "@/lib/constants";
+import { PACKAGES, PACKAGES_NOTE } from "@/lib/constants";
 
 const METAL = {
   silver: {
@@ -67,19 +67,17 @@ function FoilCard({ pkg }: { pkg: Pkg }) {
         <Mark frame={false} className="h-14 w-14 opacity-80" />
       </div>
 
-      <p className="mt-10 font-display text-5xl font-extrabold leading-none">
-        {pkg.price}
+      <p className="mt-9 font-display text-[2.6rem] font-extrabold leading-none">
+        {pkg.dailyPoints}
         <span className="ms-2 font-sans text-lg font-semibold" style={{ color: metal.soft }}>
-          نقطة
+          نقطة يومياً
         </span>
       </p>
 
-      <ul className="mt-9 flex-1 space-y-4 text-[15px] leading-7" style={{ color: metal.soft }}>
+      <ul className="mt-8 flex-1 space-y-4 text-[15px] leading-7" style={{ color: metal.soft }}>
         <li className="flex gap-3">
           <Zap size={20} className="mt-1 shrink-0" />
-          <span>
-            تضيف <b style={{ color: metal.ink }}>{pkg.dailyPoints} نقطة</b> لحسابك يومياً
-          </span>
+          <span>تضاف لحسابك تلقائياً كل يوم</span>
         </li>
         <li className="flex gap-3">
           <InfinityIcon size={20} className="mt-1 shrink-0" />
@@ -94,9 +92,7 @@ function FoilCard({ pkg }: { pkg: Pkg }) {
       </ul>
 
       <a
-        href={SITE.playStoreUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        href="#download"
         className="btn relative z-10 mt-10 text-white"
         style={{ background: metal.cta, ["--sweep" as string]: "#6d28d9" }}
       >

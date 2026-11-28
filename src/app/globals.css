@@ -256,6 +256,11 @@ body {
 .btn-dark:hover {
   color: var(--ink);
 }
+.btn-light {
+  color: var(--ink);
+  background: #fff;
+  --sweep: var(--yellow);
+}
 }
 
 /* ---------- Pointer-lit cards ---------- */
